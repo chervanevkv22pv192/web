@@ -28,22 +28,22 @@ class ReportController extends Controller
 
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
-// Настройки SMTP
+// ГЌГ Г±ГІГ°Г®Г©ГЄГЁ SMTP
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 $mail->SMTPDebug = 0;
 $mail->Host = "smtp.mail.ru";
 //$mail->Port = 465;
-$mail->Username = 'magastik@mail.ru';            
-$mail->Password = '27WbeLwa34BeDT6kM9jn';            
-// От кого
+$mail->Username = '@mail.ru';            
+$mail->Password = '';            
+// ГЋГІ ГЄГ®ГЈГ®
 $mail->setFrom('magastik@mail.ru', 'Pixourse');		
-// Кому
+// ГЉГ®Г¬Гі
 $mail->addAddress($email, $email);
-// Тема письма
+// Г’ГҐГ¬Г  ГЇГЁГ±ГјГ¬Г 
 $mail->Subject = 'Notification: No reply';
-// Тело письма
-$body = '<b><h4>Ваша жалоба принята и скоро будет рассмотрена!</h4></b>';
+// Г’ГҐГ«Г® ГЇГЁГ±ГјГ¬Г 
+$body = '<b><h4>Г‚Г ГёГ  Г¦Г Г«Г®ГЎГ  ГЇГ°ГЁГ­ГїГІГ  ГЁ Г±ГЄГ®Г°Г® ГЎГіГ¤ГҐГІ Г°Г Г±Г±Г¬Г®ГІГ°ГҐГ­Г !</h4></b>';
 $mail->msgHTML($body);
 $mail->send();
 
